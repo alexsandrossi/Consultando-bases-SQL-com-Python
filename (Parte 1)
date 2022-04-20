@@ -1,0 +1,19 @@
+create database aula1; 
+-- show databases; 
+use aula1; 
+create table primeira_tabela( id_tabela int(11) not null, nome varchar(30) not null, idade int not null ); 
+alter table primeira_tabela add column endereco varchar(50) not null; 
+-- alter table primeira_tabela drop column id_tabela; 
+alter table primeira_tabela modify column idade decimal(3,2) not null; 
+alter table primeira_tabela drop column idade; 
+alter table primeira_tabela add primary key(id_tabela); 
+-- describe primeira_tabela; 
+insert into primeira_tabela(id_tabela, nome, endereco) values(1, "Danilo", "Rua Ocean"); 
+insert into primeira_tabela(id_tabela, nome, endereco) values (2, "André", "Rua Ocean 2"),
+(3, "Michele", "Rua Ocean 3"),(4, "Rafael", "Rua Ocean 4"); 
+insert into primeira_tabela values (5, "Camila", "Rua Ocean 5"),(6, "David", "Rua Ocean 6"),
+(7, "Rui", "Rua Ocean 7"); 
+select * from primeira_tabela; 
+select * from primeira_tabela order by nome; 
+select * from primeira_tabela order by nome desc; 
+select nome, endereco from primeira_tabela order
